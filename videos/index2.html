@@ -248,7 +248,7 @@
             console.log(`تشغيل الحلقة رقم: ${episodeNumber}`);
             const videoElement = document.getElementById('video-player');
             if (videoElement) {
-                const episodeData = episodes[episodeNumber] || episodesPart2[episodeNumber];
+                const episodeData = episodes[episodeNumber] || episodesPart2[episodeNumber] || episodespart3[episodeNumber];
       if (episodeData) {
     videoElement.src = episodeData.video; // استخدام الرابط المناسب
     const downloadLink = document.getElementById('download-link');
