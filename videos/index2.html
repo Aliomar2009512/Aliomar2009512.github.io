@@ -138,8 +138,12 @@
            7: {
                  video: "https://drive.google.com/file/d/1zVETYxHGn0SPSLMk1Yg68ecLIhSUK40m/preview",
                   download: "https://drive.google.com/uc?export=download&id=1zVETYxHGn0SPSLMk1Yg68ecLIhSUK40m"
-              },
-               8 : {
+              }
+            // أضف باقي الحلقات هنا
+        };
+
+        const episodesPart2 = {
+                8 : {
                 video: "https://drive.google.com/file/d/1B5nL62Ru8o-BJUY-kbeAy7OICghSe5oi/preview",
                 download: "https://drive.google.com/uc?export=download&id=1B5nL62Ru8o-BJUY-kbeAy7OICghSe5oi"
                 },
@@ -223,6 +227,9 @@
                     video: "https://drive.google.com/file/d/1pyB7W8AFZKVTYndcAgYOKy-pVyNvVzsu/preview",
                     download: "https://drive.google.com/uc?export=download&id=1pyB7W8AFZKVTYndcAgYOKy-pVyNvVzsu"
                 }
+            // أضف باقي الحلقات هنا
+        };
+         const episodesPart3 = {
                 29 : {
                 video: "https://drive.google.com/file/d/1UtKecjDTg9KMnNCQO4n1vwSc4HNaa0L3/preview",
                 download: "https://drive.google.com/uc?export=download&id=1UtKecjDTg9KMnNCQO4n1vwSc4HNaa0L3"
@@ -310,42 +317,32 @@
                 50 : {
                 video: "https://drive.google.com/file/d/1TrdsVZZ3ygsz_fAztlzmDQ62nMJU2iE5/preview",
                 download: "https://drive.google.com/uc?export=download&id=1TrdsVZZ3ygsz_fAztlzmDQ62nMJU2iE5"
-                }
-            
+                },
             // أضف باقي الحلقات هنا
         };
 
-        
-        
+        const urlParams = new URLSearchParams(window.location.search);
 
-        let currentEpisode = 1;
-        const videoPlayer = document.getElementById("video-player");
-        const downloadLink = document.getElementById("download-link");
-        const prevBtn = document.getElementById("prev-btn");
-        const nextBtn = document.getElementById("next-btn");
+        // محاولة قراءة الرقم باستخدام كلا المفتاحين
+        const episodeNumber = urlParams.get('episode') || urlParams.get('episodespart2') || urlParams.get('episodespart3');
 
-        // دالة تحميل الحلقة
-        function loadEpisode(episode) {
-            if (episodes[episode]) {
-                videoPlayer.src = episodes[episode].video;
-                downloadLink.href = episodes[episode].download;
-                currentEpisode = episode;
-            }
+        // التحقق إذا تم العثور على رقم الحلقة
+        if (episodeNumber) {
+            console.log(`تشغيل الحلقة رقم: ${episodeNumber}`);
+            const videoElement = document.getElementById('video-player');
+            if (videoElement) {
+                const episodeData = episodes[episodeNumber] || episodesPart2[episodeNumber] || episodespart3[episodeNumber];
+      if (episodeData) {
+    videoElement.src = episodeData.video; // استخدام الرابط المناسب
+    const downloadLink = document.getElementById('download-link');
+    downloadLink.href = episodeData.download; // تحديث رابط التنزيل
+         }      
+   else {
+    console.log('حلقة غير موجودة');
+}
         }
-
-        // أزرار التحكم
-        prevBtn.addEventListener("click", () => {
-            if (currentEpisode > 1) loadEpisode(currentEpisode - 1);
-        });
-
-        nextBtn.addEventListener("click", () => {
-            if (currentEpisode < Object.keys(episodes).length) loadEpisode(currentEpisode + 1);
-        });
-
-        // تشغيل الحلقة الأولى
-        loadEpisode(currentEpisode);
+    }
     </script>
 <script src="https://alwingulla.com/88/tag.min.js" data-zone="118901" async data-cfasync="false"></script>
 </body>
 </html>
-
