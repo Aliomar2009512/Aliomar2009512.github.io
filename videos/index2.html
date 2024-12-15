@@ -233,14 +233,59 @@
                 29 : {
                 video: "https://drive.google.com/file/d/1UtKecjDTg9KMnNCQO4n1vwSc4HNaa0L3/preview",
                 download: "https://drive.google.com/uc?export=download&id=1UtKecjDTg9KMnNCQO4n1vwSc4HNaa0L3"
+                },
+                 30 : {
+                video: "https://drive.google.com/file/d/1UpotKTMbxA3GCfW5Et_TyX3dax23Pftd/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UpotKTMbxA3GCfW5Et_TyX3dax23Pftd"
+                },
+                 31 : {
+                video: "https://drive.google.com/file/d/1UrWbajjAGQigfAThcsx203JTy6H-L3BP/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UrWbajjAGQigfAThcsx203JTy6H-L3BP"
+                },
+                 32 : {
+                video: "https://drive.google.com/file/d/1Uepp26K7dRu0i6TsJvmSUNXWT6i0LB2P/preview",
+                download: "https://drive.google.com/uc?export=download&id=1Uepp26K7dRu0i6TsJvmSUNXWT6i0LB2P"
+                },
+                33 : {
+                video: "https://drive.google.com/file/d/1UmQpz-LjoVEPV5Qdf-l0iK2BH-7SY-j9/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UmQpz-LjoVEPV5Qdf-l0iK2BH-7SY-j9"
+                },
+                 34 : {
+                video: "https://drive.google.com/file/d/1UjP8FO32zpC1hfowSrtGe75SOZs1FnHN/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UjP8FO32zpC1hfowSrtGe75SOZs1FnHN"
+                },
+                35 : {
+                video: "https://drive.google.com/file/d/1U_FmUUs697J0pBqvObTMGXImzdxo9Wb7/preview",
+                download: "https://drive.google.com/uc?export=download&id=1U_FmUUs697J0pBqvObTMGXImzdxo9Wb7"
+                },
+                36 : {
+                video: "https://drive.google.com/file/d/1UZbg4DAvThmMHquahANl_wXs8-g90NFB/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UZbg4DAvThmMHquahANl_wXs8-g90NFB"
+                },
+                37 : {
+                video: "https://drive.google.com/file/d/1UcBmkQFcRAGTJMwK5iu_HtnTtWCWtrAD/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UcBmkQFcRAGTJMwK5iu_HtnTtWCWtrAD"
+                },
+                38 : {
+                video: "https://drive.google.com/file/d/1UYpxEVeh0-bemivp27bYz1Y67oxyFv2r/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UYpxEVeh0-bemivp27bYz1Y67oxyFv2r"
+                },
+                39 : {
+                video: "https://drive.google.com/file/d/1UWVyCRUs3Q3_qXqiDSEyYjYWsFIAr4z_/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UWVyCRUs3Q3_qXqiDSEyYjYWsFIAr4z_"
+                },
+                40 : {
+                video: "https://drive.google.com/file/d/1UXhNLA6w3aD0ezz4ROG3PrdARIwyqMz8/preview",
+                download: "https://drive.google.com/uc?export=download&id=1UXhNLA6w3aD0ezz4ROG3PrdARIwyqMz8"
                 }
+             
             // أضف باقي الحلقات هنا
         };
 
         const urlParams = new URLSearchParams(window.location.search);
 
         // محاولة قراءة الرقم باستخدام كلا المفتاحين
-        const episodeNumber = urlParams.get('episode') || urlParams.get('episodespart2');
+        const episodeNumber = urlParams.get('episode') || urlParams.get('episodespart2') || urlParams.get('episodespart3');
 
         // التحقق إذا تم العثور على رقم الحلقة
         if (episodeNumber) {
