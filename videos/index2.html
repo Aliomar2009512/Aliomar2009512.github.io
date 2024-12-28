@@ -343,18 +343,26 @@
                 },
             // أضف باقي الحلقات هنا
         };
+        const episodesPart4 = {
+                51 : {
+                video: "https://www.mp4upload.com/embed-v6bhye8p9kn2.html",
+                download: "https://fdewsdc.sbs/d/yx5o6mel9203"
+                }
+                
+            // أضف باقي الحلقات هنا
+        };
 
         const urlParams = new URLSearchParams(window.location.search);
 
         // محاولة قراءة الرقم باستخدام كلا المفتاحين
-        const episodeNumber = urlParams.get('episode') || urlParams.get('episodespart2') || urlParams.get('episodespart3');
+        const episodeNumber = urlParams.get('episode') || urlParams.get('episodespart2') || urlParams.get('episodespart3')||urlParams.get('episodespart4');
 
         // التحقق إذا تم العثور على رقم الحلقة
         if (episodeNumber) {
             console.log(`تشغيل الحلقة رقم: ${episodeNumber}`);
             const videoElement = document.getElementById('video-player');
             if (videoElement) {
-                const episodeData = episodes[episodeNumber] || episodesPart2[episodeNumber] || episodesPart3[episodeNumber];
+                const episodeData = episodes[episodeNumber] || episodesPart2[episodeNumber] || episodesPart3[episodeNumber] || episodesPart4[episodeNumber];
       if (episodeData) {
     videoElement.src = episodeData.video; // استخدام الرابط المناسب
     const downloadLink = document.getElementById('download-link');
